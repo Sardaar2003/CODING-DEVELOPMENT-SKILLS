@@ -1,0 +1,1 @@
+{"name":"Local: IndianCoinChangeProblem","url":"d:\\CODING DEVELOPMENT SKILLS\\C++\\IndianCoinChangeProblem.cpp","tests":[{"id":1674718706903,"input":"10\n1 2 5 10 20 50 100 200 500 2000\n350","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CODING DEVELOPMENT SKILLS\\C++\\IndianCoinChangeProblem.cpp","group":"local","local":true}
