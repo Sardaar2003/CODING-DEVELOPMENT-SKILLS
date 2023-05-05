@@ -6,7 +6,8 @@ int main()
     string data;
     cin >> data;
     stack<char> st;
-    for (int i = 0; i < data.length(); i++)
+    st.push(data[0]);
+    for (int i = 1; i < data.length(); i++)
     {
         if (st.top() == data[i])
             st.pop();
@@ -19,5 +20,6 @@ int main()
         newVal += st.top();
         st.pop();
     }
+    reverse(newVal.begin(), newVal.end());
     cout << newVal << endl;
 }

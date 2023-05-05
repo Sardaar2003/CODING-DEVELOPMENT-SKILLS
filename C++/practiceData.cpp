@@ -1,43 +1,29 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
+
+int minOperations(int X, int n)
+{
+    int count = 0;
+    while (X < n)
+    {
+        int div = 1;
+        while (X + X / div > n)
+        {
+            div++;
+        }
+        X += X / div;
+        count++;
+    }
+    return count;
+}
+
 int main()
 {
-    int size, value;
-    cin >> size >> value;
-    int element;
-    vector<int> data;
-    for (int i = 0; i < size; i++)
-    {
-        cin >> element;
-        data.push_back(element);
-    }
-    int i = 0;
-    int j = size - 1;
-    int count = 0;
-    bool flag = true;
-    while (true)
-    {
-        if (data[i] <= value)
-        {
-            i++;
-        }
-        if (data[j] <= value)
-        {
-            j--;
-        }
-        if (data[i] > value && data[j] > value)
-            break;
-    }
-    for (int i = 0; i < size; i++)
-    {
-        if (data[i] == value)
-            count++;
-    }
-    // cout << count << endl;
-    if (count == size)
-    {
-        cout << 0 << endl;
-    }
-    else
-        cout << abs(j - i) + 1 << endl;
+    int X = 1;
+    int n;
+    cin >> n;
+    int minOps = minOperations(X, n);
+    cout << minOps << endl;
+
+    return 0;
 }
