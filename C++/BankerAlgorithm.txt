@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstring>
 
 using namespace std;
 
@@ -63,33 +64,6 @@ bool isSafeState(vector<int> &available, vector<vector<int>> &allocation, vector
     return true;
 }
 
-bool canRequestResources(vector<int> &available, vector<int> &request, int process, int resources)
-{
-    for (int i = 0; i < resources; i++)
-    {
-        if (request[i] > available[i])
-        {
-            return false;
-        }
-    }
-
-    for (int i = 0; i < resources; i++)
-    {
-        available[i] -= request[i];
-    }
-
-    if (!isSafeState(available, allocation, max, processes, resources))
-    {
-        for (int i = 0; i < resources; i++)
-        {
-            available[i] += request[i];
-        }
-        return false;
-    }
-
-    return true;
-}
-
 int main()
 {
     int processes, resources;
@@ -105,18 +79,8 @@ int main()
         cin >> available[i];
     }
 
-    vector<vector<int>> allocation(processes, vector<int>(resources, 0));
-    cout << "Enter the allocation matrix: " << endl;
-    for (int i = 0; i < processes; i++)
-    {
-        for (intj = 0; j < resources; j++)
-        {
-            cin >> allocation[i][j];
-        }
-    }
-
     vector<vector<int>> max(processes, vector<int>(resources, 0));
-    cout << "Enter the max matrix: " << endl;
+    cout << "Enter the maximum resources required by each process: ";
     for (int i = 0; i < processes; i++)
     {
         for (int j = 0; j < resources; j++)
@@ -125,32 +89,24 @@ int main()
         }
     }
 
+    vector<vector<int>> allocation(processes, vector<int>(resources, 0));
+    cout << "Enter the resources allocated to each process: ";
+    for (int i = 0; i < processes; i++)
+    {
+        for (int j = 0; j < resources; j++)
+        {
+            cin >> allocation[i][j];
+        }
+    }
+
     if (isSafeState(available, allocation, max, processes, resources))
     {
-        cout << "The system is in a safe state." << endl;
+        cout << "The system is in a safe  " << endl;
     }
     else
     {
-        cout << "The system is not in a safe state." << endl;
+        cout
+            << "The system is in an unsafe state" << endl;
     }
-
-    cout << "Enter the process number and the requested resources: ";
-    int process;
-    vector<int> request(resources, 0);
-    cin >> process;
-    for (int i = 0; i < resources; i++)
-    {
-        cin >> request[i];
-    }
-
-    if (canRequestResources(available, request, process, resources))
-    {
-        cout << "The additional resource can be granted immediately." << endl;
-    }
-    else
-    {
-        cout << "The additional resource cannot be granted immediately." << endl;
-    }
-
     return 0;
 }

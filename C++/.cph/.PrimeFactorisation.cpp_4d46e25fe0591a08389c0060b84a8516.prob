@@ -1,0 +1,1 @@
+{"name":"Local: PrimeFactorisation","url":"d:\\CODING DEVELOPMENT SKILLS\\C++\\PrimeFactorisation.cpp","tests":[{"id":1675934438397,"input":"545341149","output":"3 3 60593461"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CODING DEVELOPMENT SKILLS\\C++\\PrimeFactorisation.cpp","group":"local","local":true}

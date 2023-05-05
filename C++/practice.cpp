@@ -41,6 +41,7 @@ void HuffmanCodes(string text)
         freq[ch]++;
 
     priority_queue<Node *, vector<Node *>, compare> heap;
+    printf("Hello World");
     for (auto pair : freq)
     {
         Node *node = new Node();
@@ -70,7 +71,7 @@ void HuffmanCodes(string text)
 
 int main()
 {
-    string text = "Huffman coding is a data compression algorithm.";
+    string text = "This is Different";
     HuffmanCodes(text);
     return 0;
 }

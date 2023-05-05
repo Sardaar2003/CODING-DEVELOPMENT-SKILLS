@@ -1,0 +1,1 @@
+{"name":"Local: bagOfChocolates","url":"d:\\CODING DEVELOPMENT SKILLS\\C++\\bagOfChocolates.cpp","tests":[{"id":1675434294477,"input":"2\n95670 9033\n64488 8147","output":"502533\n149827"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CODING DEVELOPMENT SKILLS\\C++\\bagOfChocolates.cpp","group":"local","local":true}

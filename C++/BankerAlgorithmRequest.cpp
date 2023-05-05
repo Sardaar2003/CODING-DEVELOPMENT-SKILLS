@@ -78,7 +78,7 @@ bool canRequestResources(vector<int> &available, vector<int> &request, int proce
         available[i] -= request[i];
     }
 
-    if (!isSafeState(available, allocation, max, processes, resources))
+    if (!isSafeState(available, allocation, max, process, resources))
     {
         for (int i = 0; i < resources; i++)
         {
@@ -109,7 +109,7 @@ int main()
     cout << "Enter the allocation matrix: " << endl;
     for (int i = 0; i < processes; i++)
     {
-        for (intj = 0; j < resources; j++)
+        for (int j = 0; j < resources; j++)
         {
             cin >> allocation[i][j];
         }
